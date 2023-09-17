@@ -1,18 +1,16 @@
 package problems
 
 import (
-	"fmt"
-	brain "problem-solver/brain"
+	"github.com/urfave/cli/v2"
 )
-
 
 func Problem() *cli.Command {
 	cmd := &cli.Command{
-		Name:        "problem",
-		Usage:       "Manage problems.",
+		Name:  "problem",
+		Usage: "Manage problems.",
 		Subcommands: []*cli.Command{
-			NewProblem(),
-		}
+			SolveProblem(),
+		},
 	}
 
 	return cmd
@@ -20,12 +18,12 @@ func Problem() *cli.Command {
 
 func SolveProblem() *cli.Command {
 	cmd := &cli.Command{
-		Name:        "solve",
-		Usage:       "Solve a problem.",
-		Action:	     func(cCtx *cli.Context) error {
+		Name:  "solve",
+		Usage: "Solve a problem.",
+		Action: func(cCtx *cli.Context) error {
 			SolveProblem()
 			return nil
-		}
+		},
 	}
 
 	return cmd

@@ -3,6 +3,7 @@ package brain
 import (
 	"bufio"
 	"fmt"
+	"os"
 )
 
 func SolveProblem() {
@@ -12,4 +13,11 @@ func SolveProblem() {
 	problem, _ := reader.ReadString('\n')
 
 	fmt.Println("Your problem is: ", problem)
+
+	solutions := GenerateIdeas(problem, 5)
+
+	fmt.Println("Here are some ideas: ")
+	for _, solution := range solutions {
+		fmt.Println(solution)
+	}
 }
